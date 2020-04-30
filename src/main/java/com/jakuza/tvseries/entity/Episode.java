@@ -1,14 +1,9 @@
 package com.jakuza.tvseries.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -24,6 +19,10 @@ public class Episode {
     private String title;
 
     private String length;
+
+    @ElementCollection
+    @Singular
+    private List<String> actors;
 
     @ManyToOne
     private Season season;

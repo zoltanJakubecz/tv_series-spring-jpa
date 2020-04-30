@@ -33,6 +33,10 @@ public class TvseriesApplication {
         return args -> {
             Episode ki_nyer_ma = Episode.builder()
                     .title("Ki nyer ma vagy holnap")
+                    .actor("Kiss Bela")
+                    .actor("Lapos Elemer")
+                    .actor("Borond Odon")
+                    .actor("Zuz Mara")
                     .length("40:20")
                     .build();
 
@@ -59,6 +63,7 @@ public class TvseriesApplication {
 
             Series knight_rider = Series.builder()
                     .title("Knight Rider")
+                    .category(Category.COMEDY)
                     .releaseYear(1982)
                     .endYear(1986)
                     .season(kukutyin)
