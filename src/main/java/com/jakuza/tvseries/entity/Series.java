@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -23,9 +24,14 @@ public class Series {
 
     private long endYear;
 
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
     @Singular
     @OneToMany(mappedBy = "series", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private List<Season> seasons;
+    @EqualsAndHashCode.Exclude
+    private Set<Season> seasons;
+
 
     @Transient
     private long duration;
@@ -35,4 +41,5 @@ public class Series {
             duration = endYear - releaseYear;
         }
     }
+
 }

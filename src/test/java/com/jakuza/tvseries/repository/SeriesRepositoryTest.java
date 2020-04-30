@@ -53,4 +53,5 @@ public class SeriesRepositoryTest {
         assertThat(seriesList).allMatch(series -> series.getDuration() == 0L);
 
     }
+
 }
